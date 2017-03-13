@@ -34,60 +34,7 @@ console.log(players[0].name);
 
 
 
-function restart(){
 
-					players = [
-				ryu = { name: "Ryu", healthPoints: 130, healthPointsName: "ryuHealth", counterAttackPower: 15, image:"ryu.png", value:"0", alive: true },
-				chunLi = {name: "Chun-Li", healthPoints: 150, healthPointsName: "chunLiHealth", counterAttackPower:15, image:"chun-li.png", value:"1", alive: true},
-				ken = {name: "Ken", healthPoints: 100, healthPointsName: "kenHealth", counterAttackPower: 15, image:"ken.png", value:"2", alive: true},
-				eHonda = {name: "E-Honda", healthPoints: 180, healthPointsName: "eHondaHealth", counterAttackPower: 15, image:"e-honda.png", value:"3", alive: true}
-				];
-
-
-				var opponentAttack = 0;
-				var opponentHealth = 0;
-				var ogUserAttack=0;
-				var userHealth = 0;
-				var newUserAttack =0;
-				var opponentsDefeated = 0;
-
-				var isDefenderSelected = false;
-
-
-				var defenderNumber = "";
-				var selectedNumber = "";
-				var yourPlayerNumber = "";
-				var yourOpponentNumber = "";
-
-				$("#choose-opponent").hide();
-
-				$("#choose-character").show();
-
-
-
-				for(i=0; i<players.length; i++){
-
-					$(".player-"+i+"-name").text(players[i].name);
-
-					newImg = $("<img>");
-
-					newImg.attr("src", "assets/images/"+players[i].image);
-
-					$(".player-"+i+"-image").append(newImg);
-
-					$(".player-"+i+"-health").text(players[i].healthPoints);
-				};
-
-
-
-				$(".defender-info").empty();
-				$(".player-info").empty();
-				$(".opponent-info").empty();
-
-
-
-
-};
 
 
 for(i=0; i<players.length; i++){
@@ -101,7 +48,7 @@ for(i=0; i<players.length; i++){
 	$(".player-"+i+"-image").append(newImg);
 
 	$(".player-"+i+"-health").text(players[i].healthPoints);
-}
+};
 
 
 
@@ -142,7 +89,7 @@ $(".potential-player").on("click", function(){
 
 		if (yourPlayerNumber === "0"){
 
-			players[yourPlayerNumber].attackPower = Math.floor((Math.random() * 15) + 20);
+			players[yourPlayerNumber].attackPower = Math.floor((Math.random() * 10) + 20);
 		}
 		else if (yourPlayerNumber === "1"){
 
@@ -150,7 +97,7 @@ $(".potential-player").on("click", function(){
 		}
 		else if (yourPlayerNumber === "2"){
 
-			players[yourPlayerNumber].attackPower = Math.floor((Math.random() * 15) + 30);
+			players[yourPlayerNumber].attackPower = Math.floor((Math.random() * 10) + 20);
 		}
 		else if(yourPlayerNumber === "3"){
 
@@ -189,19 +136,19 @@ $(".opponent").on("click", function(){
 
 					if (yourOpponentNumber === "0"){
 
-						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 15) + 5);
+						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 25) + 25);
 					}
 					else if (yourOpponentNumber === "1"){
 
-						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 10) + 5);
+						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 15) + 35);
 					}
 					else if (yourOpponentNumber === "2"){
 
-						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 15) + 8);
+						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 20) + 35);
 					}
 					else if(yourOpponentNumber === "3"){
 
-						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 10) + 5);
+						players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 10) + 25);
 					};
 
 
@@ -211,7 +158,7 @@ $(".opponent").on("click", function(){
 
 
 
-				players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 30) + 15);
+				
 
 	}
 });
@@ -281,7 +228,9 @@ $("#attack-btn").on("click", function(){
 			if( userHealth < 1) {
 				 alert("You have been defeated");
 
-				 restart();
+				 // restartGame();
+
+				 location.reload();
 
 			};
 
@@ -290,235 +239,20 @@ $("#attack-btn").on("click", function(){
 
 				alert("You are the champion!");
 
-				restart();
+				// restartGame();
+
+				location.reload();
 			};
 
 
-	$("#reset-btn").on("click", restart());
+	$("#reset-btn").on("click", function(){
+		// restartGame();
+		location.reload();
+	});
 
 
 
 });
-
-
-// function updateDom( div, v){
-
-// 	var newDiv = $("<div>");
-
-// 	newDiv.text(v);
-
-
-// 	$(div).append(newDiv);
-
-// };
-
-
-
-
-// function updateDom( div, v){
-
-// 	var newDiv = $("<div>");
-
-// 	newDiv.text(v);
-
-// 	$(div).append(newDiv);
-
-// };
-
-
-// function updateDomHealth( div, v){
-
-// 	var newDiv = $("<div>");
-
-// 	newDiv.text(v);
-
-// 	newDiv.addClass(players[i].healthPointsName);
-
-// 	$(div).append(newDiv);
-
-// };
-
-
-// function updateDomImg( div, image, name){
-
-// 	var newImg = $("<img>");
-
-// 	newImg.addClass("player-option-image");
-
-// 	newImg.attr("src", "assets/images/"+ image);
-
-// 	$(div).append(newImg);
-
-// };
-
-
-
-// function startGame( div, name, image, health){
-
-// updateDom(div, name);
-
-// updateDomImg(div, image, name);
-
-// updateDomHealth( div, health);
-
-// };
-
-// function playerSelected( div, name, image, health){
-
-// updateDom(div, name);
-
-// updateDomImg(div, image, name);
-
-// updateDom( div, health);
-
-// };
-
-// function opponentSelected( div, name, image, health){
-
-// updateDom(div, name);
-
-// updateDomImg(div, image, name);
-
-// updateDomHealth( div, health);
-
-// };
-
-
-// for(i=0; i<players.length; i++){
-
-
-// 	var playerContainer = $("<div>");
-
-// 	playerContainer.attr("id", players[i].value);
-
-// 	playerContainer.addClass("col-xs-3 player-option");
-
-// 	startGame(playerContainer, players[i].name, players[i].image, players[i].healthPoints)
-
-// 	$("#players-div").append(playerContainer);
-
-// };
-
-
-
-
-
-// for(i=0; i<players.length; i++){
-
-
-// 	var playerContainer = $("<div>");
-
-// 	playerContainer.addClass("col-xs-3 your-opponents");
-
-// 	playerContainer.attr("id", players[i].name);
-
-
-// 	startGame(playerContainer, players[i].name, players[i].image, players[i].healthPoints)
-
-// 	$("#opponents-div").append(playerContainer);
-
-// };
-
-
-
-// $(".your-opponents").hide();
-
-
-
-
-
-
-// $(".player-option").on("click", function(){
-
-
-
-// 	$(".your-opponents").show();
-
-
-// 	selectedNumber = this.id;
-
-// 	console.log(selectedNumber);
-
-// 	playerSelected("#my-player-div", players[selectedNumber].name, players[selectedNumber].image, players[selectedNumber].healthPoints);
-
-
-// 	$("#"+players[selectedNumber].name).hide();
-
-	
-// 	$(".player-option").hide();
-
-// 	players[selectedNumber].attackPower = Math.floor((Math.random() * 15) + 6);
-
-
-// });
-
-
-
-
-// $(".your-opponents").on("click", function(){
-
-
-// 	console.log(this.id);
-
-// 	defenderId = this.id;
-
-// 	if(defenderId === "Ryu"){
-// 		defenderNumber = 0;
-// 	}
-// 	else if(defenderId === "Chun-Li"){
-// 		defenderNumber = 1;
-// 	}
-// 	else if (defenderId === "Ken"){
-// 		defenderNumber = 2;
-// 	}
-// 	else if (defenderId === "E-Honda"){
-// 		defenderNumber = 3;
-// 	};
-
-// 	opponentSelected("#defender-div", players[defenderNumber].name, players[defenderNumber].image, players[defenderNumber].healthPoints);
-
-// 	$("#"+players[defenderNumber].name).hide();
-
-
-// });
-
-
-
-
-
-// $("#attack-btn").on("click", function(){
-
-
-// 	players[defenderNumber].healthPoints - players[selectedNumber].attackPower;
-
-
-
-
-
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
