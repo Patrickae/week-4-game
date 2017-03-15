@@ -1,30 +1,52 @@
 
 
 
-img{ height: 150px; }
+img{ height: 120px; }
 
-body{ padding-left:30px; 
+body{ padding-left:30px;
+	padding-right:30px; 
+	background-image: url("../images/streetfighterbackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color:#000000;}
 
-		background-color:#DFDCE3;}
+	#attack-btn { margin-top: 50px; }
 
-#attack-btn { margin-top: 50px; }
+	#reset-btn { position:fixed;
+		bottom:10px;
+		right:10px;
 
-#reset-btn { position:fixed;
-			bottom:10px;
-			right:10px;
+	}
 
-			 }
+	.panel-success{  background-color: rgba( 100,225,100,0.5);
 
+	}
 
-#choose-character, #choose-opponent {
+	.panel-danger{  background-color: rgba( 225,100,100,0.5);
+
+	}
+
+	hr{border:1px solid #F7B733;}
+
+	header {text-align: center;}
+
+	#choose-character, #choose-opponent {
+		border: 3px solid #FC4A1A;
+		background-color: rgba(220,220,220,.7);
+		border-radius:20px;
 
 		text-align:center;
-}
+	}
 
-.potential-player, .opponent { opacity: 0.8;
-								 }
+	.potential-player, .opponent { opacity: 0.8;
+	}
 
-.potential-player:hover, .opponent:hover { opacity: 0.99;
-								 }
+	.potential-player:hover, .opponent:hover { opacity: 0.99;
+	}
 
-#fight-arena { text-align:center;}
+	#fight-arena { text-align:center;
+		border-radius:20px;
+		height: 400px;
+		border: 3px solid #FC4A1A;
+		background-color: rgba(220,220,220,.7);
+	}
