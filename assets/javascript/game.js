@@ -222,6 +222,7 @@ $("#attack-btn").on("click", function(){
 						opponentsDefeated += 1;
 
 						$(".defender-info").empty();
+						$(".panel-danger").hide();
 					};
 
 
