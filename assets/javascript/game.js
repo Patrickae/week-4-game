@@ -20,59 +20,61 @@ $(document).ready(function(){
 
 
 	var players = [			
-					ryu = { name: "Ryu", 
-							healthPoints: 130,  
-							counterAttackPower: "", 
-							image:"ryu.png", 
-							value:"0" },
+	ryu = { name: "Ryu", 
+	healthPoints: 130,  
+	counterAttackPower: "", 
+	image:["ryugif.gif", "ryu.png"],
+	value:"0" },
 
-					chunLi = {name: "Chun-Li", 
-							healthPoints: 150, 
-							counterAttackPower:"", 
-							image:"chun-li.png",
-							value:"1"},
+	chunLi = {name: "Chun-Li", 
+	healthPoints: 150, 
+	counterAttackPower:"", 
+	image: ["chunligif.gif","chun-li.png"],
+	value:"1"},
 
-					ken = {name: "Ken", 
-							healthPoints: 100, 
-							counterAttackPower: "", 
-							image:"ken.png", 
-							value:"2"},
+	ken = {name: "Ken", 
+	healthPoints: 100, 
+	counterAttackPower: "", 
+	image:["kengif.gif", "ken.png"],
+	value:"2"},
 
-					eHonda = {name: "E-Honda", 
-							  healthPoints: 180, 
-						      counterAttackPower: "", 
-							  image:"e-honda.png",
-							  value:"3"}
-				];
+	eHonda = {name: "E-Honda", 
+	healthPoints: 180, 
+	counterAttackPower: "", 
+	image:["ehondagif.gif", "e-honda.png"],
+	value:"3"}
+	];
 
 
 // console.log(players[0].name);
 
 
 
-	for(i=0; i<players.length; i++){
+for(i=0; i<players.length; i++){
 
-				$(".player-"+i+"-name").text(players[i].name);
+	$(".player-"+i+"-name").text(players[i].name);
 
-				newImg = $("<img>");
+	newImg = $("<img>");
 
-				newImg.attr("src", "assets/images/"+players[i].image);
+	newImg.attr("src", "assets/images/"+players[i].image[1]);
 
-				$(".player-"+i+"-image").append(newImg);
+	$(".player-"+i+"-image").append(newImg);
 
-				$(".player-"+i+"-health").text(players[i].healthPoints);
-	};
-
-
-
-
-	$("#choose-opponent").hide();
+	$(".player-"+i+"-health").text(players[i].healthPoints);
+};
 
 
 
 
+$("#choose-opponent").hide();
+$(".panel-success").hide();
+$(".panel-danger").hide();
 
-	$(".potential-player").on("click", function(){
+
+
+
+
+$(".potential-player").on("click", function(){
 
 
 			// console.log($(this).attr("value"));
@@ -80,6 +82,7 @@ $(document).ready(function(){
 
 			yourPlayerNumber = $(this).attr("value");
 
+			$(".panel-success").show();
 			$("#choose-character").hide();
 			$("#choose-opponent").show();
 
@@ -87,7 +90,7 @@ $(document).ready(function(){
 
 			newImg = $("<img>");
 
-			newImg.attr("src", "assets/images/"+players[yourPlayerNumber].image);
+			newImg.attr("src", "assets/images/"+players[yourPlayerNumber].image[0]);
 			$(".my-player-image").append(newImg);
 
 			$(".my-player-health").text(players[yourPlayerNumber].healthPoints);
@@ -119,33 +122,35 @@ $(document).ready(function(){
 			// console.log(players[yourPlayerNumber].attackPower);
 
 
-	});
+		});
 
-	$(".opponent").on("click", function(){
+$(".opponent").on("click", function(){
 
-			if(isDefenderSelected === false){
-					
-					isDefenderSelected = true;
+	$(".panel-danger").show();
+
+	if(isDefenderSelected === false){
+
+		isDefenderSelected = true;
 						// console.log(isDefenderSelected);
 
 						// console.log($(this).attr("value"));
 
-					yourOpponentNumber = $(this).attr("value");
+						yourOpponentNumber = $(this).attr("value");
 
-					$(".player"+yourOpponentNumber+"-option").hide();
+						$(".player"+yourOpponentNumber+"-option").hide();
 
-					$(".defender-name").text(players[yourOpponentNumber].name);
+						$(".defender-name").text(players[yourOpponentNumber].name);
 
-					newImg = $("<img>");
+						newImg = $("<img>");
 
-					newImg.attr("src", "assets/images/"+players[yourOpponentNumber].image);
-					$(".defender-image").append(newImg);
+						newImg.attr("src", "assets/images/"+players[yourOpponentNumber].image[0]);
+						$(".defender-image").append(newImg);
 
-					$(".defender-health").text(players[yourOpponentNumber].healthPoints);
+						$(".defender-health").text(players[yourOpponentNumber].healthPoints);
 
 
 
-					if (yourOpponentNumber === "0"){
+						if (yourOpponentNumber === "0"){
 
 							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 25) + 25);
 						}
@@ -160,15 +165,15 @@ $(document).ready(function(){
 						else if(yourOpponentNumber === "3"){
 
 							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 10) + 25);
+						};
+
 					};
-
-				};
-	});
+				});
 
 
-	$("#attack-btn").on("click", function(){
+$("#attack-btn").on("click", function(){
 
-			if (isDefenderSelected === true){
+	if (isDefenderSelected === true){
 
 
 						// console.log(players[yourOpponentNumber].counterAttackPower);
@@ -195,7 +200,7 @@ $(document).ready(function(){
 
 						if(opponentHealth > 0){
 
-								userHealth -= opponentAttack;
+							userHealth -= opponentAttack;
 						};
 
 
@@ -207,11 +212,11 @@ $(document).ready(function(){
 						$(".defender-health").text(players[yourOpponentNumber].healthPoints);
 						$(".my-player-health").text(players[yourPlayerNumber].healthPoints);
 
-					};
+					// };
 
 
 
-				if( opponentHealth < 1){
+					if( opponentHealth < 1){
 
 						isDefenderSelected = false;
 						opponentsDefeated += 1;
@@ -221,28 +226,31 @@ $(document).ready(function(){
 
 
 
-				if( userHealth < 1) {
+					if( userHealth < 1) {
 
-						 alert("You have been defeated");
-						 location.reload();
+						alert("You have been defeated");
+						location.reload();
 					};
 
 					
-				if(opponentsDefeated === 3){
+					if(opponentsDefeated === 3){
 
 						alert("You are the champion!");
 						location.reload();
 					};
 
 
-				$("#reset-btn").on("click", function(){
-						
-						location.reload();
-				});
 
 
+				};
 
-	});
+				
+
+			});
+$("#reset-btn").on("click", function(){
+
+	location.reload();
+});
 
 
 

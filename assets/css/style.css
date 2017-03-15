@@ -1,0 +1,30 @@
+
+
+
+img{ height: 150px; }
+
+body{ padding-left:30px; 
+
+		background-color:#DFDCE3;}
+
+#attack-btn { margin-top: 50px; }
+
+#reset-btn { position:fixed;
+			bottom:10px;
+			right:10px;
+
+			 }
+
+
+#choose-character, #choose-opponent {
+
+		text-align:center;
+}
+
+.potential-player, .opponent { opacity: 0.8;
+								 }
+
+.potential-player:hover, .opponent:hover { opacity: 0.99;
+								 }
+
+#fight-arena { text-align:center;}

@@ -4,145 +4,245 @@
 	<title>RPG Game</title>
 
 
-<script
-  src="http://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"></script>
+	<script
+	src="http://code.jquery.com/jquery-3.1.1.js"
+	integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	crossorigin="anonymous"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
 
-<h1>RPG Game</h1>
+	<header><img src="assets/images/streetfighterlogo.png" alt="streetfighter-logo"></img></header>
 
 
-<div id = "container">
+	<div id = "container">
 
 
-			<div class= "section col-xs-12" id= "choose-character">
 
-			
-					<div class="col-xs-3 potential-player player0-option" value="0">
-						<div class="player-0-name"></div>
-						<div class="player-0-image"></div>
-						<div class="player-0-health"></div>
+		
+		<div class= "section col-xs-5" id= "choose-character">
+
+
+			<h2>Choose your player</h2>
+
+			<div class = "row">
+
+
+				<div class="col-xs-6 potential-player player0-option" value="0">
+					<div class="row col-xs-12">
+						<h3><div class="player-0-name name"></div></h3>
+					</div>
+					<div class="row col-xs-12">
+						<div class="player-0-image image"></div>
+					</div>
+					<div class="row col-xs-12">
+						<h3><div class="player-0-health health"></div></h3>
 					</div>
 
-					<div class="col-xs-3 potential-player player1-option" value="1">
-						<div class="player-1-name"></div>
-						<div class="player-1-image"></div>
-						<div class="player-1-health"></div>
+				</div>
+
+
+				<div class="col-xs-6 potential-player player1-option" value="1">
+					<div class="row col-xs-12">
+						<h3><div class="player-1-name name"></div></h3>
+					</div>
+					<div class="row col-xs-12">
+						<div class="img-responsive player-1-image image"></div>
+					</div>
+					<div class="row col-xs-12">
+						<h3><div class="player-1-health health"></div></h3>
 					</div>
 
-					<div class="col-xs-3 potential-player player2-option" value="2">
-						<div class="player-2-name"></div>
-						<div class="player-2-image"></div>
-						<div class="player-2-health"></div>
-					</div>
+				</div>
 
-					<div class="col-xs-3 potential-player player3-option" value="3"> 
-						<div class="player-3-name"></div>
-						<div class="player-3-image"></div>
-						<div class="player-3-health"></div>
-					</div>
 
 			</div>
 
 
 
+			<div class ="row">
 
+				<div class="col-xs-6 potential-player player2-option" value="2">
+					<div class="row col-xs-12">
+						<h3><div class="player-2-name name"></div></h3>
+					</div>
+					<div class="row col-xs-12">
+						<div class="player-2-image image"></div>
+					</div>
+					<div class="row col-xs-12">
+						<h3><div class="player-2-health health"></div></h3>
+					</div>
 
+				</div>
+
+				<div class="col-xs-6 potential-player player3-option" value="3">
+					<div class="row col-xs-12">
+						<h3><div class="player-3-name name"></div></h3>
+					</div>
+					<div class="row col-xs-12">
+						<div class="player-3-image image"></div>
+					</div>
+					<div class="row col-xs-12">
+						<h3><div class="player-3-health health"></div></h3>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
 		
-		<div class="your-character">
-			<h2>Your Character</h2>
-			<div class="row">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-3">
 
-					<div class="my-player-name player-info"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class= "section col-xs-5" id= "choose-opponent">
+		<h2>Choose your opponent</h2>
+
+		<div class = "row">
+			<div class="col-xs-6 opponent player0-option" value="0">
+				<div class="row col-xs-12">
+					<h3><div class="player-0-name name"></div></h3>
+				</div>
+				<div class="row col-xs-12">
+					<div class="player-0-image image"></div>
+				</div>
+				<div class="row col-xs-12">
+					<h3><div class="player-0-health health"></div></h3>
+				</div>
+
+			</div>
+
+
+			<div class="col-xs-6 opponent player1-option" value="1">
+				<div class="row col-xs-12">
+					<h3><div class="player-1-name name"></div></h3>
+				</div>
+				<div class="row col-xs-12">
+					<div class="player-1-image image"></div>
+				</div>
+				<div class="row col-xs-12">
+					<h3><div class="player-1-health health"></div></h3>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class = "row">
+
+
+			<div class="col-xs-6 opponent player2-option" value="2">
+				<div class="row col-xs-12">
+					<h3><div class="player-2-name name"></div></h3>
+				</div>
+				<div class="row col-xs-12">
+					<div class="player-2-image image"></div>
+				</div>
+				<div class="row col-xs-12">
+					<h3><div class="player-2-health health"></div></h3>
+				</div>
+
+			</div>
+
+			<div class="col-xs-6 opponent player3-option" value="3">
+				<div class="row col-xs-12">
+					<h3><div class="player-3-name name"></div></h3>
+				</div>
+				<div class="row col-xs-12">
+					<div class="player-3-image image"></div>
+				</div>
+				<div class="row col-xs-12">
+					<h3><div class="player-3-health health"></div></h3>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+
+		<div class = "col-xs-1"></div>
+
+
+	<div class = "col-xs-6" id="fight-arena">
+
+		<div class="your-character col-xs-5">
+			<h2>Your Player</h2>
+
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3><div class="my-player-name player-info"></div></h3>
+				</div>
+
+				<div class = "panel-body">
 					<div class="my-player-image player-info"></div>
-					<div class="my-player-health player-info"></div>
 
-				</div>	
-				<div class="col-xs-8"></div>
+
+					<h3><div class="my-player-health player-info"></div></h3>
+				</div>
+
 			</div>
 		</div>
 
 
 
 
+		<div class = "col-xs-2">
+			<button class= "btn btn-warning" id="attack-btn"> Attack </button>
+		</div>
 
 
 
-		<div class= "section">
+
+
+		<div class="defender col-xs-5" id="defender-div">
 			<h2>Defender</h2>
-			<div class="row">
-					<div class="col-xs-1"></div>
-					<div class="defender col-xs-3" id="defender-div">
-						
-						<div class="defender-name defender-info"></div>
-						<div class="defender-image defender-info"></div>
-						<div class="defender-health defender-info"></div>
-
-					</div>
-					<div class="col-xs-8"></div>	
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3><div class="defender-name defender-info"></div></h3>
+				</div>
+				<div class="panel-body">
+					<div class="defender-image defender-info"></div>
+					<h3><div class="defender-health defender-info"></div></h3>
+				</div>
 			</div>
+
 		</div>
 
-
-
-
-		<button class= "btn" id="attack-btn"> Attack </button>
-
+	</div>
 
 
 
 
-		
-			<h2>Your opponents</h2>
-			<div class= "section col-xs-12" id= "choose-opponent">
-
-			
-						<div class="col-xs-3 opponent player0-option" value="0">
-							<div class="player-0-name opponent-info"></div>
-							<div class="player-0-image opponent-info"></div>
-							<div class="player-0-health opponent-info"></div>
-						</div>
-
-						<div class="col-xs-3 opponent player1-option" value="1">
-							<div class="player-1-name opponent-info"></div>
-							<div class="player-1-image opponent-info"></div>
-							<div class="player-1-health opponent-info"></div>
-						</div>
-
-						<div class="col-xs-3 opponent player2-option" value="2">
-							<div class="player-2-name opponent-info"></div>
-							<div class="player-2-image opponent-info"></div>
-							<div class="player-2-health opponent-info"></div>
-						</div>
-
-						<div class="col-xs-3 opponent player3-option" value="3">
-							<div class="player-3-name opponent-info"></div>
-							<div class="player-3-image opponent-info"></div>
-							<div class="player-3-health opponent-info"></div>
-						</div>
-
-			</div>
-	
-
-
-
-
-	<button class= "btn" id="reset-btn"> Reset </button>
+	<button class= "btn btn-lg btn-primary" id="reset-btn"> Reset Game</button>
 
 
 </div>
+
+
+
+
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 
