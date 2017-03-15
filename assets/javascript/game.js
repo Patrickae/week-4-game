@@ -156,11 +156,11 @@ $(".opponent").on("click", function(){
 						}
 						else if (yourOpponentNumber === "1"){
 
-							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 15) + 35);
+							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 15) + 55);
 						}
 						else if (yourOpponentNumber === "2"){
 
-							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 20) + 35);
+							players[yourOpponentNumber].counterAttackPower = Math.floor((Math.random() * 20) + 55);
 						}
 						else if(yourOpponentNumber === "3"){
 
