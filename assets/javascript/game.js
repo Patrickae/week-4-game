@@ -82,7 +82,7 @@ $(".potential-player").on("click", function(){
 
 			yourPlayerNumber = $(this).attr("value");
 
-			$(".panel-success").show();
+			$(".panel-success").show(500);
 			$("#choose-character").hide();
 			$("#choose-opponent").show();
 
@@ -126,7 +126,7 @@ $(".potential-player").on("click", function(){
 
 $(".opponent").on("click", function(){
 
-	$(".panel-danger").show();
+	$(".panel-danger").show(500);
 
 	if(isDefenderSelected === false){
 
@@ -221,8 +221,8 @@ $("#attack-btn").on("click", function(){
 						isDefenderSelected = false;
 						opponentsDefeated += 1;
 
-						$(".defender-info").empty();
-						$(".panel-danger").hide();
+						$(".defender-info").empty(500);
+						$(".panel-danger").hide(500);
 					};
 
 
